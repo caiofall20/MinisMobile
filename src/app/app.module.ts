@@ -11,11 +11,13 @@ import {  HttpModule } from '@angular/http';
 import { SearchPipe } from '../pipes/search/search';
 import { SortPipe } from '../pipes/sort/sort';
 import { CarrinhoServiceProvider } from '../providers/carrinho-service/carrinho-service';
+import { AdicionarPage } from '../pages/adicionar/adicionar';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    AdicionarPage,
     SearchPipe,
     SortPipe
   ],
@@ -27,7 +29,8 @@ import { CarrinhoServiceProvider } from '../providers/carrinho-service/carrinho-
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AdicionarPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,42 @@
+<!--
+  Generated template for the SavePage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastro de Carrinhos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <ion-item>
+        <ion-label fixed>Modelo</ion-label>
+        <ion-input type="text" [(ngModel)]="carrinho.modelo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Marca</ion-label>
+        <ion-input type="text" [(ngModel)]="carrinho.marca"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label fixed>Escala</ion-label>
+        <ion-input type="text" [(ngModel)]="carrinho.escala"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Ano</ion-label>
+        <ion-input type="text" [(ngModel)]="carrinho.ano"></ion-input>
+      </ion-item>
+
+      <button ion-button full (click)="salvar(carrinho)">Adicionar Carrinho</button>
+
+  </ion-list>
+
+</ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CarrinhoServiceProvider } from '../../providers/carrinho-service/carrinho-service';
+import { AdicionarPage } from '../adicionar/adicionar';
 
 @Component({
   selector: 'page-home',
@@ -32,4 +33,7 @@ export class HomePage {
     this.order = this.descending ? 1 : -1;
   }
 
+  add(){
+    this.navCtrl.push(AdicionarPage);
+}
 }
