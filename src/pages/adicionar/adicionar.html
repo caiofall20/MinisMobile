@@ -26,6 +26,12 @@
 
 
       <ion-item>
+        <ion-label fixed>Coleção</ion-label>
+        <ion-input type="text" [(ngModel)]="carrinho.colecao"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
         <ion-label fixed>Escala</ion-label>
         <ion-input type="text" [(ngModel)]="carrinho.escala"></ion-input>
       </ion-item>
@@ -35,7 +41,7 @@
         <ion-input type="text" [(ngModel)]="carrinho.ano"></ion-input>
       </ion-item>
 
-      <button ion-button full (click)="salvar(carrinho)">Adicionar Carrinho</button>
+      <button ion-button full (click)="saveCarrinho(carrinho)">Adicionar Carrinho</button>
 
   </ion-list>
 

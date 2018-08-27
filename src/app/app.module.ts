@@ -12,6 +12,7 @@ import { SearchPipe } from '../pipes/search/search';
 import { SortPipe } from '../pipes/sort/sort';
 import { CarrinhoServiceProvider } from '../providers/carrinho-service/carrinho-service';
 import { AdicionarPage } from '../pages/adicionar/adicionar';
+import { HttpServiceProvider } from '../providers/http-service/http-service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AdicionarPage } from '../pages/adicionar/adicionar';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CarrinhoServiceProvider
+    CarrinhoServiceProvider,
+    HttpServiceProvider
   ]
 })
 export class AppModule {}
