@@ -13,12 +13,14 @@ import { SortPipe } from '../pipes/sort/sort';
 import { CarrinhoServiceProvider } from '../providers/carrinho-service/carrinho-service';
 import { AdicionarPage } from '../pages/adicionar/adicionar';
 import { HttpServiceProvider } from '../providers/http-service/http-service';
+import { PesquisarPage } from '../pages/pesquisar/pesquisar';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AdicionarPage,
+    PesquisarPage,
     SearchPipe,
     SortPipe
   ],
@@ -31,7 +33,8 @@ import { HttpServiceProvider } from '../providers/http-service/http-service';
   entryComponents: [
     MyApp,
     HomePage,
-    AdicionarPage
+    AdicionarPage,
+    PesquisarPage
   ],
   providers: [
     StatusBar,

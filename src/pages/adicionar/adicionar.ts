@@ -32,12 +32,10 @@ export class AdicionarPage {
 
     this.http.post('carrinhos', carrinho)
              .subscribe(data => {
-               let toast = this.toastCtrl.create({
-                   message: data.msg,
-                   duration: 3000
+            
                  });
-                 toast.present();
-             });
+                
+           
 
 }
 }

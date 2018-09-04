@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+   Coleção
+    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+    <ion-list>
+        <ion-item   *ngFor="let obj of result | search : terms | sort: {property: column, order: order}">
+         <h2>{{obj.modelo}} - {{obj.marca}} - {{obj.colecao}} - {{obj.ano}} - {{obj.escala}}  </h2>
+       </ion-item> 
+     </ion-list>
+     <button ion-button secondary (click)="add()">Adicionar Carrinho</button>
+</ion-content>
