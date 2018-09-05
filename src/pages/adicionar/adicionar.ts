@@ -22,7 +22,7 @@ export class AdicionarPage {
     'escala' : '',
     'ano' : ''
   };
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpServiceProvider, public toastCtrl: ToastController,) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpServiceProvider, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -35,7 +35,13 @@ export class AdicionarPage {
             
                  });
                 
-           
+}
 
+presentToast() {
+  const toast = this.toastCtrl.create({
+    message: 'Miniatura adicionada com sucesso!',
+    duration: 3000
+  });
+  toast.present();
 }
 }
