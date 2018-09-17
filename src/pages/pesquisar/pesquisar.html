@@ -11,10 +11,10 @@
 
 <ion-content class="home">
     <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
-    <ion-list>
+    <ion-list text-wrap>
         <ion-item   *ngFor="let obj of result | search : terms | sort: {property: column, order: order}">
          <h2>{{obj.modelo}} - {{obj.marca}} - {{obj.colecao}} - {{obj.ano}} - {{obj.escala}}  </h2>
        </ion-item> 
      </ion-list>
-     <button ion-button secondary (click)="add()">Adicionar Carrinho</button>
+     <button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>
 </ion-content>

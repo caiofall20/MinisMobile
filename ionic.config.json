@@ -1,5 +1,7 @@
 {
   "name": "app-search",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

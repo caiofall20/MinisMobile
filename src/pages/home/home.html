@@ -3,13 +3,25 @@
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title>Home</ion-title>
+      <ion-title>Inicio</ion-title>
     </ion-navbar>
   </ion-header>
   
   <ion-content padding>
-   <h1>Coleção de miniaturas</h1>
-    <button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>
-    <button ion-fab mini (click)="pesq()"><ion-icon  name="search"></ion-icon></button>
+   <ion-card>
+    <img src="assets/imgs/minituras.png"/>
+    <ion-card-content>
+      <ion-card-title>
+      Coleção de Miniaturas
+        </ion-card-title>
+      <p>
+       Esse aplicativo foi criado com o objetivo de ajudar na hora de comprar uma nova miniatura.
+       Abaixo um pouco de informação sobre os tipos de escalas existentes.
+       
+      </p>
+    </ion-card-content>
+  </ion-card>
+    <h3>Adicionar</h3><button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>
+    <h3>Pesquisar</h3><button ion-fab mini (click)="pesq()"><ion-icon  name="search"></ion-icon></button>
   </ion-content>
 
