@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { CarrinhoServiceProvider } from '../../providers/carrinho-service/carrinho-service';
 import { AdicionarPage } from '../adicionar/adicionar';
+import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
 /**
  * Generated class for the PesquisarPage page.
@@ -25,7 +26,7 @@ export class PesquisarPage {
   order: number;
   column: string = 'name';
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public carrinhoService: CarrinhoServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public carrinhoService: CarrinhoServiceProvider,private ActionSheetController: ActionSheetController,public http: HttpServiceProvider) {
     this.getAll();
   }
 
@@ -44,6 +45,52 @@ export class PesquisarPage {
 
   add(){
     this.navCtrl.push(AdicionarPage);
+}
+
+// deleteCarrinho(obj) {
+
+//   this.carrinhoService.delete(obj)
+//   .then(data => {
+//     this.obj = data;
+//     this.result = this.obj;
+//   });
+// }
+
+selectMiniatura(obj: any) {
+
+  this.ActionSheetController.create({
+    title: `${obj.modelo}`,
+    buttons: [
+      {
+        text: 'Editar',
+        handler: () => {
+
+          // this.navCtrl.push(EditarAlunoPage, 
+          //   {AlunoId: aluno.$key });
+
+        }
+      },
+      {
+        text: 'Apagar',
+        role: 'destructive',
+        handler: () => {
+          this.carrinhoService.delete(obj)
+          .subscribe(data => {
+         
+              });
+          // this.listaAlunoRef$.remove(aluno.$key);
+        }
+      },
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+        handler: () => {
+          console.log("O usuário cancelou o botão selecionado.")
+        }
+      }
+    ]
+  }).present();
+  
 }
 
 }

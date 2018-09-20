@@ -97,11 +97,21 @@ var HttpServiceProvider = /** @class */ (function () {
         //   return res.json();
         // });
     };
+    HttpServiceProvider.prototype.put = function (endpoint, resource) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return this.http.put(this.url + "/" + endpoint, resource, options);
+        // .map(res => {
+        //   return res.json();
+        // });
+    };
     HttpServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
     ], HttpServiceProvider);
     return HttpServiceProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=http-service.js.map
@@ -138,6 +148,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var CarrinhoServiceProvider = /** @class */ (function () {
     function CarrinhoServiceProvider(http) {
         this.http = http;
+        this.url = 'https://miniatura-api.herokuapp.com/carrinhos';
         console.log("Hello HeroService");
     }
     CarrinhoServiceProvider.prototype.load = function () {
@@ -155,11 +166,18 @@ var CarrinhoServiceProvider = /** @class */ (function () {
             });
         });
     };
+    CarrinhoServiceProvider.prototype.delete = function (obj) {
+        return this.http.delete(this.url + "/" + obj.id)
+            .map(function (res) {
+            return res.json();
+        });
+    };
     CarrinhoServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */]) === "function" && _a || Object])
     ], CarrinhoServiceProvider);
     return CarrinhoServiceProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=carrinho-service.js.map
@@ -200,9 +218,9 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\home\home.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-title>Inicio</ion-title>\n\n    </ion-navbar>\n\n  </ion-header>\n\n  \n\n  <ion-content padding>\n\n   <ion-card>\n\n    <img src="assets/imgs/minituras.png"/>\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n      Coleção de Miniaturas\n\n        </ion-card-title>\n\n      <p>\n\n       Esse aplicativo foi criado com o objetivo de ajudar na hora de comprar uma nova miniatura.\n\n       Abaixo um pouco de informação sobre os tipos de escalas existentes.\n\n       \n\n      </p>\n\n    </ion-card-content>\n\n  </ion-card>\n\n    <h3>Adicionar</h3><button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n\n    <h3>Pesquisar</h3><button ion-fab mini (click)="pesq()"><ion-icon  name="search"></ion-icon></button>\n\n  </ion-content>\n\n\n\n'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/caio/Documentos/MinisMobile/src/pages/home/home.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Inicio</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n   <ion-card>\n    <img src="assets/imgs/minituras.png"/>\n    <ion-card-content>\n      <ion-card-title>\n      Coleção de Miniaturas\n        </ion-card-title>\n      <p>\n       Esse aplicativo foi criado com o objetivo de ajudar na hora de comprar uma nova miniatura.\n       Abaixo um pouco de informação sobre os tipos de escalas existentes.\n       \n      </p>\n    </ion-card-content>\n  </ion-card>\n    <h3>Adicionar</h3><button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n    <h3>Pesquisar</h3><button ion-fab mini (click)="pesq()"><ion-icon  name="search"></ion-icon></button>\n  </ion-content>\n\n'/*ion-inline-end:"/home/caio/Documentos/MinisMobile/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], HomePage);
     return HomePage;
 }());
@@ -280,14 +298,14 @@ var AppModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_7__angular_http__["c" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/adicionar/adicionar.module#AdicionarPageModule', name: 'AdicionarPage', segment: 'adicionar', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/pesquisar/pesquisar.module#PesquisarPageModule', name: 'PesquisarPage', segment: 'pesquisar', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
@@ -297,7 +315,7 @@ var AppModule = /** @class */ (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_10__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */],
                 __WEBPACK_IMPORTED_MODULE_12__providers_http_service_http_service__["a" /* HttpServiceProvider */]
             ]
@@ -367,13 +385,13 @@ var MyApp = /** @class */ (function () {
         this.nav.setRoot(page.component);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\projetos\MinisMobile\src\app\app.html"*/'<ion-menu [content]="content">\n\n    <ion-header>\n\n      <ion-toolbar>\n\n        <ion-title>Menu</ion-title>\n\n      </ion-toolbar>\n\n    </ion-header>\n\n  \n\n    <ion-content>\n\n      <ion-list>\n\n        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n  \n\n  </ion-menu>\n\n  \n\n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"E:\projetos\MinisMobile\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/caio/Documentos/MinisMobile/src/app/app.html"*/'<ion-menu [content]="content">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n  \n    <ion-content>\n      <ion-list>\n        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n          {{p.title}}\n        </button>\n      </ion-list>\n    </ion-content>\n  \n  </ion-menu>\n  \n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"/home/caio/Documentos/MinisMobile/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -534,11 +552,12 @@ var AdicionarPage = /** @class */ (function () {
     };
     AdicionarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-adicionar',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\adicionar\adicionar.html"*/'<!--\n\n  Generated template for the SavePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Cadastro de Carrinhos</ion-title>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n      <ion-item>\n\n        <ion-label fixed>Modelo</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.modelo"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Marca</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.marca"></ion-input>\n\n      </ion-item>\n\n\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Coleção</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.colecao"></ion-input>\n\n      </ion-item>\n\n\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Escala</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.escala"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Ano</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.ano"></ion-input>\n\n      </ion-item>\n\n\n\n      <button ion-button full (click)="saveCarrinho(carrinho)" (click)="presentToast(\'bottom\')">Adicionar Carrinho</button>\n\n\n\n  </ion-list>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\adicionar\adicionar.html"*/,
+            selector: 'page-adicionar',template:/*ion-inline-start:"/home/caio/Documentos/MinisMobile/src/pages/adicionar/adicionar.html"*/'<!--\n  Generated template for the SavePage page.\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Cadastro de Carrinhos</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n      <ion-item>\n        <ion-label fixed>Modelo</ion-label>\n        <ion-input type="text" [(ngModel)]="carrinho.modelo"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label fixed>Marca</ion-label>\n        <ion-input type="text" [(ngModel)]="carrinho.marca"></ion-input>\n      </ion-item>\n\n\n      <ion-item>\n        <ion-label fixed>Coleção</ion-label>\n        <ion-input type="text" [(ngModel)]="carrinho.colecao"></ion-input>\n      </ion-item>\n\n\n      <ion-item>\n        <ion-label fixed>Escala</ion-label>\n        <ion-input type="text" [(ngModel)]="carrinho.escala"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label fixed>Ano</ion-label>\n        <ion-input type="text" [(ngModel)]="carrinho.ano"></ion-input>\n      </ion-item>\n\n      <button ion-button full (click)="saveCarrinho(carrinho)" (click)="presentToast(\'bottom\')">Adicionar Carrinho</button>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"/home/caio/Documentos/MinisMobile/src/pages/adicionar/adicionar.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__["a" /* HttpServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__["a" /* HttpServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__["a" /* HttpServiceProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]) === "function" && _d || Object])
     ], AdicionarPage);
     return AdicionarPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=adicionar.js.map
@@ -554,6 +573,7 @@ var AdicionarPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_carrinho_service_carrinho_service__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__adicionar_adicionar__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_http_service_http_service__ = __webpack_require__(154);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -567,6 +587,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the PesquisarPage page.
  *
@@ -574,10 +595,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var PesquisarPage = /** @class */ (function () {
-    function PesquisarPage(navCtrl, navParams, carrinhoService) {
+    function PesquisarPage(navCtrl, navParams, carrinhoService, ActionSheetController, http) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.carrinhoService = carrinhoService;
+        this.ActionSheetController = ActionSheetController;
+        this.http = http;
         this.descending = false;
         this.column = 'name';
         this.getAll();
@@ -597,13 +620,53 @@ var PesquisarPage = /** @class */ (function () {
     PesquisarPage.prototype.add = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__adicionar_adicionar__["a" /* AdicionarPage */]);
     };
+    // deleteCarrinho(obj) {
+    //   this.carrinhoService.delete(obj)
+    //   .then(data => {
+    //     this.obj = data;
+    //     this.result = this.obj;
+    //   });
+    // }
+    PesquisarPage.prototype.selectMiniatura = function (obj) {
+        var _this = this;
+        this.ActionSheetController.create({
+            title: "" + obj.modelo,
+            buttons: [
+                {
+                    text: 'Editar',
+                    handler: function () {
+                        // this.navCtrl.push(EditarAlunoPage, 
+                        //   {AlunoId: aluno.$key });
+                    }
+                },
+                {
+                    text: 'Apagar',
+                    role: 'destructive',
+                    handler: function () {
+                        _this.carrinhoService.delete(obj)
+                            .subscribe(function (data) {
+                        });
+                        // this.listaAlunoRef$.remove(aluno.$key);
+                    }
+                },
+                {
+                    text: 'Cancelar',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log("O usuário cancelou o botão selecionado.");
+                    }
+                }
+            ]
+        }).present();
+    };
     PesquisarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-pesquisar',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\pesquisar\pesquisar.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n   Coleção\n    </ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="home">\n    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>\n    <ion-list text-wrap>\n        <ion-item   *ngFor="let obj of result | search : terms | sort: {property: column, order: order}">\n         <h2>{{obj.modelo}} - {{obj.marca}} - {{obj.colecao}} - {{obj.ano}} - {{obj.escala}}  </h2>\n       </ion-item> \n     </ion-list>\n     <button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n</ion-content>'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\pesquisar\pesquisar.html"*/,
+            selector: 'page-pesquisar',template:/*ion-inline-start:"/home/caio/Documentos/MinisMobile/src/pages/pesquisar/pesquisar.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n   Coleção\n    </ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="home">\n    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>\n    <ion-list text-wrap>\n        <ion-item   *ngFor="let obj of result | search : terms | sort: {property: column, order: order}" (click)="selectMiniatura(obj)">\n         <h2>{{obj.modelo}} - {{obj.marca}} - {{obj.colecao}} - {{obj.ano}} - {{obj.escala}}  </h2>\n       </ion-item> \n     </ion-list>\n     <button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n</ion-content>'/*ion-inline-end:"/home/caio/Documentos/MinisMobile/src/pages/pesquisar/pesquisar.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_http_service_http_service__["a" /* HttpServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_http_service_http_service__["a" /* HttpServiceProvider */]) === "function" && _e || Object])
     ], PesquisarPage);
     return PesquisarPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=pesquisar.js.map

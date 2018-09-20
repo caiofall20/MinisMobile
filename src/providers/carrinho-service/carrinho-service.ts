@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class CarrinhoServiceProvider {
+  private url: string = 'https://miniatura-api.herokuapp.com/carrinhos';
   data: any;
   constructor(public http: Http) {
     console.log("Hello HeroService");
@@ -32,5 +33,12 @@ export class CarrinhoServiceProvider {
           resolve(this.data);
         });
     });
+  }
+    delete(obj) {
+    return this.http.delete(`${this.url}/${obj.id}`)
+      .map(res => {
+        return res.json();
+      });
+     
   }
 }

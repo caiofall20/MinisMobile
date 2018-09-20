@@ -1,3 +1,4 @@
+import { Carrinho } from './../../models/carrinho.model';
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -36,4 +37,23 @@ export class HttpServiceProvider {
       //   return res.json();
       // });
   }
+
+  put(endpoint, resource) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.put(`${this.url}/${endpoint}`, resource, options)
+      // .map(res => {
+      //   return res.json();
+      // });
+  }
+  // // delete(carrinho, id) {
+  // //   return this.http.delete(`${this.url}/${carrinho}/${id}`)
+  // //     .map(res => {
+  // //       return res.json();
+  // //     });
+     
+  // }
 }
