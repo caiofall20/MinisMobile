@@ -41,4 +41,11 @@ export class CarrinhoServiceProvider {
       });
      
   }
+
+  put(obj) {
+    return this.http.put(`${this.url}/${obj.id}`,obj)
+    .map(res => {
+      return res.json();
+    });
+  }
 }

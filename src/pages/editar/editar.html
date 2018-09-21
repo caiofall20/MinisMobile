@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{carrinho.id}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label floating>Modelo</ion-label>
+         <ion-input type="text" [(ngModel)]="carrinho.modelo"></ion-input>
+       </ion-item>
+     
+       <ion-item>
+           <ion-label floating>Marca</ion-label>
+            <ion-input type="text" [(ngModel)]="carrinho.marca"></ion-input>
+          </ion-item>
+     
+          <ion-item>
+             <ion-label floating>Coleção</ion-label>
+              <ion-input type="text" [(ngModel)]="carrinho.colecao"></ion-input>
+            </ion-item>
+     
+            <ion-item>
+               <ion-label floating>Escala</ion-label>
+                <ion-input type="text" [(ngModel)]="carrinho.escala"></ion-input>
+              </ion-item>
+     
+              <ion-item>
+                 <ion-label floating>Ano</ion-label>
+                  <ion-input type="text" [(ngModel)]="carrinho.ano"></ion-input>
+                </ion-item>
+     
+                <button ion-button block (click)="edit(carrinho)" >Editar</button>
+</ion-content>

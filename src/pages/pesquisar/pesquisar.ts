@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ActionSheetController } from 'ioni
 import { CarrinhoServiceProvider } from '../../providers/carrinho-service/carrinho-service';
 import { AdicionarPage } from '../adicionar/adicionar';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
+import { EditarPage } from '../editar/editar';
 
 /**
  * Generated class for the PesquisarPage page.
@@ -65,8 +66,9 @@ selectMiniatura(obj: any) {
         text: 'Editar',
         handler: () => {
 
-          // this.navCtrl.push(EditarAlunoPage, 
-          //   {AlunoId: aluno.$key });
+           this.navCtrl.push(EditarPage,
+            {CarrinhoId: obj.id });
+
 
         }
       },

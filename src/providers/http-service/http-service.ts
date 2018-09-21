@@ -38,17 +38,17 @@ export class HttpServiceProvider {
       // });
   }
 
-  put(endpoint, resource) {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+  // put(endpoint, resource,id) {
+  //   let headers = new Headers();
+  //   headers.append('Content-Type', 'application/json');
 
-    let options = new RequestOptions({ headers: headers });
+  //   let options = new RequestOptions({ headers: headers });
 
-    return this.http.put(`${this.url}/${endpoint}`, resource, options)
-      // .map(res => {
-      //   return res.json();
-      // });
-  }
+  //   return this.http.put(`${this.url}/${endpoint}/${id}`, resource, options)
+  //     // .map(res => {
+  //     //   return res.json();
+  //     // });
+  // }
   // // delete(carrinho, id) {
   // //   return this.http.delete(`${this.url}/${carrinho}/${id}`)
   // //     .map(res => {
