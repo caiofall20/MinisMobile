@@ -23,17 +23,35 @@ export class EditarPage {
     'escala' : '',
     'ano' : ''
   };
+
+  public obj: any;
+  public result: any;
+
+  descending: boolean = false;
+  order: number;
+  column: string = 'name';
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpServiceProvider,public carrinhoService: CarrinhoServiceProvider) {
+    this.getAll();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditarPage');
     const CarrinhoId = this.navParams.get('CarrinhoId');
+    const Carrinho = this.navParams.get('Carrinho');
     console.log(CarrinhoId);
+    console.log(Carrinho);
+  }
+
+  getAll() {
+    this.carrinhoService.load()
+      .then(data => {
+        this.obj = data;
+        this.result = this.obj;
+      });
   }
   
-edit(obj){
-  this.carrinhoService.put(obj)
+edit(Carrinho){
+  this.carrinhoService.put(Carrinho)
   .subscribe(data => {
  
       });

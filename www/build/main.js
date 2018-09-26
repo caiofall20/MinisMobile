@@ -41,25 +41,37 @@ var EditarPage = /** @class */ (function () {
             'escala': '',
             'ano': ''
         };
+        this.descending = false;
+        this.column = 'name';
+        this.getAll();
     }
     EditarPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad EditarPage');
         var CarrinhoId = this.navParams.get('CarrinhoId');
+        var Carrinho = this.navParams.get('Carrinho');
         console.log(CarrinhoId);
+        console.log(Carrinho);
     };
-    EditarPage.prototype.edit = function (obj) {
-        this.carrinhoService.put(obj)
+    EditarPage.prototype.getAll = function () {
+        var _this = this;
+        this.carrinhoService.load()
+            .then(function (data) {
+            _this.obj = data;
+            _this.result = _this.obj;
+        });
+    };
+    EditarPage.prototype.edit = function (Carrinho) {
+        this.carrinhoService.put(Carrinho)
             .subscribe(function (data) {
         });
     };
     EditarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-editar',template:/*ion-inline-start:"/home/caio/Documentos/MinisMobile/src/pages/editar/editar.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>{{carrinho.id}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n    <ion-item>\n        <ion-label floating>Modelo</ion-label>\n         <ion-input type="text" [(ngModel)]="carrinho.modelo"></ion-input>\n       </ion-item>\n     \n       <ion-item>\n           <ion-label floating>Marca</ion-label>\n            <ion-input type="text" [(ngModel)]="carrinho.marca"></ion-input>\n          </ion-item>\n     \n          <ion-item>\n             <ion-label floating>Coleção</ion-label>\n              <ion-input type="text" [(ngModel)]="carrinho.colecao"></ion-input>\n            </ion-item>\n     \n            <ion-item>\n               <ion-label floating>Escala</ion-label>\n                <ion-input type="text" [(ngModel)]="carrinho.escala"></ion-input>\n              </ion-item>\n     \n              <ion-item>\n                 <ion-label floating>Ano</ion-label>\n                  <ion-input type="text" [(ngModel)]="carrinho.ano"></ion-input>\n                </ion-item>\n     \n                <button ion-button block (click)="edit(carrinho)" >Editar</button>\n</ion-content>'/*ion-inline-end:"/home/caio/Documentos/MinisMobile/src/pages/editar/editar.html"*/,
+            selector: 'page-editar',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\editar\editar.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>{{obj.modelo}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-item>\n\n        <ion-label floating>Modelo</ion-label>\n\n         <ion-input type="text" [(ngModel)]="obj.modelo"></ion-input>\n\n       </ion-item>\n\n     \n\n       <ion-item>\n\n           <ion-label floating>Marca</ion-label>\n\n            <ion-input type="text" [(ngModel)]="obj.marca"></ion-input>\n\n          </ion-item>\n\n     \n\n          <ion-item>\n\n             <ion-label floating>Coleção</ion-label>\n\n              <ion-input type="text" [(ngModel)]="obj.colecao"></ion-input>\n\n            </ion-item>\n\n     \n\n            <ion-item>\n\n               <ion-label floating>Escala</ion-label>\n\n                <ion-input type="text" [(ngModel)]="obj.escala"></ion-input>\n\n              </ion-item>\n\n     \n\n              <ion-item>\n\n                 <ion-label floating>Ano</ion-label>\n\n                  <ion-input type="text" [(ngModel)]="obj.ano"></ion-input>\n\n                </ion-item>\n\n     \n\n                <button ion-button block (click)="edit(obj)" >Editar</button>\n\n</ion-content>'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\editar\editar.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__["a" /* HttpServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__["a" /* HttpServiceProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__["a" /* HttpServiceProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */]])
     ], EditarPage);
     return EditarPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=editar.js.map
@@ -150,7 +162,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/caio/Documentos/MinisMobile/src/pages/home/home.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Inicio</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n   <ion-card>\n    <img src="assets/imgs/minituras.png"/>\n    <ion-card-content>\n      <ion-card-title>\n      Coleção de Miniaturas\n        </ion-card-title>\n      <p>\n       Esse aplicativo foi criado com o objetivo de ajudar na hora de comprar uma nova miniatura.\n       Abaixo um pouco de informação sobre os tipos de escalas existentes.\n       \n      </p>\n    </ion-card-content>\n  </ion-card>\n    <h3>Adicionar</h3><button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n    <h3>Pesquisar</h3><button ion-fab mini (click)="pesq()"><ion-icon  name="search"></ion-icon></button>\n  </ion-content>\n\n'/*ion-inline-end:"/home/caio/Documentos/MinisMobile/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\home\home.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-title>Inicio</ion-title>\n\n    </ion-navbar>\n\n  </ion-header>\n\n  \n\n  <ion-content padding>\n\n   <ion-card>\n\n    <img src="assets/imgs/minituras.png"/>\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n      Coleção de Miniaturas\n\n        </ion-card-title>\n\n      <p>\n\n       Esse aplicativo foi criado com o objetivo de ajudar na hora de comprar uma nova miniatura.\n\n       Abaixo um pouco de informação sobre os tipos de escalas existentes.\n\n       \n\n      </p>\n\n    </ion-card-content>\n\n  </ion-card>\n\n    <h3>Adicionar</h3><button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n\n    <h3>Pesquisar</h3><button ion-fab mini (click)="pesq()"><ion-icon  name="search"></ion-icon></button>\n\n  </ion-content>\n\n\n\n'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], HomePage);
@@ -326,7 +338,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/caio/Documentos/MinisMobile/src/app/app.html"*/'<ion-menu [content]="content">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n  \n    <ion-content>\n      <ion-list>\n        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n          {{p.title}}\n        </button>\n      </ion-list>\n    </ion-content>\n  \n  </ion-menu>\n  \n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"/home/caio/Documentos/MinisMobile/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\projetos\MinisMobile\src\app\app.html"*/'<ion-menu [content]="content">\n\n    <ion-header>\n\n      <ion-toolbar>\n\n        <ion-title>Menu</ion-title>\n\n      </ion-toolbar>\n\n    </ion-header>\n\n  \n\n    <ion-content>\n\n      <ion-list>\n\n        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n  \n\n  </ion-menu>\n\n  \n\n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"E:\projetos\MinisMobile\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -489,7 +501,7 @@ var AdicionarPage = /** @class */ (function () {
     };
     AdicionarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-adicionar',template:/*ion-inline-start:"/home/caio/Documentos/MinisMobile/src/pages/adicionar/adicionar.html"*/'<!--\n  Generated template for the SavePage page.\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Cadastro de Carrinhos</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n      <ion-item>\n        <ion-label fixed>Modelo</ion-label>\n        <ion-input type="text" [(ngModel)]="carrinho.modelo"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label fixed>Marca</ion-label>\n        <ion-input type="text" [(ngModel)]="carrinho.marca"></ion-input>\n      </ion-item>\n\n\n      <ion-item>\n        <ion-label fixed>Coleção</ion-label>\n        <ion-input type="text" [(ngModel)]="carrinho.colecao"></ion-input>\n      </ion-item>\n\n\n      <ion-item>\n        <ion-label fixed>Escala</ion-label>\n        <ion-input type="text" [(ngModel)]="carrinho.escala"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label fixed>Ano</ion-label>\n        <ion-input type="text" [(ngModel)]="carrinho.ano"></ion-input>\n      </ion-item>\n\n      <button ion-button full (click)="saveCarrinho(carrinho)" (click)="presentToast(\'bottom\')">Adicionar Carrinho</button>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"/home/caio/Documentos/MinisMobile/src/pages/adicionar/adicionar.html"*/,
+            selector: 'page-adicionar',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\adicionar\adicionar.html"*/'<!--\n\n  Generated template for the SavePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Cadastro de Carrinhos</ion-title>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n      <ion-item>\n\n        <ion-label fixed>Modelo</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.modelo"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Marca</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.marca"></ion-input>\n\n      </ion-item>\n\n\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Coleção</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.colecao"></ion-input>\n\n      </ion-item>\n\n\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Escala</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.escala"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Ano</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.ano"></ion-input>\n\n      </ion-item>\n\n\n\n      <button ion-button full (click)="saveCarrinho(carrinho)" (click)="presentToast(\'bottom\')">Adicionar Carrinho</button>\n\n\n\n  </ion-list>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\adicionar\adicionar.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__["a" /* HttpServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
     ], AdicionarPage);
@@ -595,8 +607,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var PesquisarPage = /** @class */ (function () {
-    function PesquisarPage(navCtrl, navParams, carrinhoService, ActionSheetController, http) {
+    function PesquisarPage(navCtrl, platform, navParams, carrinhoService, ActionSheetController, http) {
         this.navCtrl = navCtrl;
+        this.platform = platform;
         this.navParams = navParams;
         this.carrinhoService = carrinhoService;
         this.ActionSheetController = ActionSheetController;
@@ -634,12 +647,15 @@ var PesquisarPage = /** @class */ (function () {
             buttons: [
                 {
                     text: 'Editar',
+                    icon: !this.platform.is('ios') ? 'build' : null,
                     handler: function () {
-                        _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__editar_editar__["a" /* EditarPage */], { CarrinhoId: obj.id });
+                        _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__editar_editar__["a" /* EditarPage */], { CarrinhoId: obj.id, CarrinhoModelo: obj.modelo, Carrinho: obj });
                     }
                 },
                 {
                     text: 'Apagar',
+                    cssClass: 'action-sheets-basic-page',
+                    icon: !this.platform.is('ios') ? 'trash' : null,
                     role: 'destructive',
                     handler: function () {
                         _this.carrinhoService.delete(obj)
@@ -651,6 +667,7 @@ var PesquisarPage = /** @class */ (function () {
                 {
                     text: 'Cancelar',
                     role: 'cancel',
+                    icon: !this.platform.is('ios') ? 'close' : null,
                     handler: function () {
                         console.log("O usuário cancelou o botão selecionado.");
                     }
@@ -660,9 +677,9 @@ var PesquisarPage = /** @class */ (function () {
     };
     PesquisarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-pesquisar',template:/*ion-inline-start:"/home/caio/Documentos/MinisMobile/src/pages/pesquisar/pesquisar.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n   Coleção\n    </ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="home">\n    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>\n    <ion-list text-wrap>\n        <ion-item   *ngFor="let obj of result | search : terms | sort: {property: column, order: order}" (click)="selectMiniatura(obj)">\n         <h2>{{obj.modelo}} - {{obj.marca}} - {{obj.colecao}} - {{obj.ano}} - {{obj.escala}}  </h2>\n       </ion-item> \n     </ion-list>\n     <button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n</ion-content>'/*ion-inline-end:"/home/caio/Documentos/MinisMobile/src/pages/pesquisar/pesquisar.html"*/,
+            selector: 'page-pesquisar',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\pesquisar\pesquisar.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n   Coleção\n\n    </ion-title>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="action-sheets-basic-page" >\n\n    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>\n\n    <ion-list text-wrap>\n\n        <ion-item   *ngFor="let obj of result | search : terms | sort: {property: column, order: order}" (click)="selectMiniatura(obj)">\n\n         <h2>{{obj.modelo}} - {{obj.marca}} - {{obj.colecao}} - {{obj.ano}} - {{obj.escala}}  </h2>\n\n       </ion-item> \n\n     </ion-list>\n\n     <button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n\n</ion-content>'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\pesquisar\pesquisar.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_4__providers_http_service_http_service__["a" /* HttpServiceProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_4__providers_http_service_http_service__["a" /* HttpServiceProvider */]])
     ], PesquisarPage);
     return PesquisarPage;
 }());

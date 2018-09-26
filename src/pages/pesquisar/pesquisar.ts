@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, Platform } from 'ionic-angular';
 import { CarrinhoServiceProvider } from '../../providers/carrinho-service/carrinho-service';
 import { AdicionarPage } from '../adicionar/adicionar';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
@@ -27,7 +27,7 @@ export class PesquisarPage {
   order: number;
   column: string = 'name';
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public carrinhoService: CarrinhoServiceProvider,private ActionSheetController: ActionSheetController,public http: HttpServiceProvider) {
+  constructor(public navCtrl: NavController,  public platform: Platform, public navParams: NavParams, public carrinhoService: CarrinhoServiceProvider,private ActionSheetController: ActionSheetController,public http: HttpServiceProvider) {
     this.getAll();
   }
 
@@ -64,16 +64,19 @@ selectMiniatura(obj: any) {
     buttons: [
       {
         text: 'Editar',
+        icon: !this.platform.is('ios') ? 'build' : null,
         handler: () => {
 
            this.navCtrl.push(EditarPage,
-            {CarrinhoId: obj.id });
+            {CarrinhoId: obj.id, CarrinhoModelo : obj.modelo, Carrinho : obj });
 
 
         }
       },
       {
         text: 'Apagar',
+        cssClass: 'action-sheets-basic-page',
+        icon: !this.platform.is('ios') ? 'trash' : null,
         role: 'destructive',
         handler: () => {
           this.carrinhoService.delete(obj)
@@ -86,6 +89,7 @@ selectMiniatura(obj: any) {
       {
         text: 'Cancelar',
         role: 'cancel',
+        icon: !this.platform.is('ios') ? 'close' : null,
         handler: () => {
           console.log("O usuário cancelou o botão selecionado.")
         }

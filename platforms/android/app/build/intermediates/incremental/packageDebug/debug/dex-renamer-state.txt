@@ -1,4 +1,4 @@
-#Wed Sep 12 00:12:10 GFT 2018
+#Sat Sep 22 21:26:24 GFT 2018
 base.0=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
 file.0=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

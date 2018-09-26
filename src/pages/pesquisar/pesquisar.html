@@ -9,7 +9,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="home">
+<ion-content padding class="action-sheets-basic-page" >
     <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
     <ion-list text-wrap>
         <ion-item   *ngFor="let obj of result | search : terms | sort: {property: column, order: order}" (click)="selectMiniatura(obj)">
