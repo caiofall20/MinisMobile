@@ -19,8 +19,8 @@ import { EditarPage } from '../editar/editar';
 })
 export class PesquisarPage {
 
-
-  public obj: any;
+ frutas = ['Maçã', 'Banana'];
+ obj = [];
   public result: any;
 
   descending: boolean = false;
@@ -30,12 +30,16 @@ export class PesquisarPage {
   constructor(public navCtrl: NavController,  public platform: Platform, public navParams: NavParams, public carrinhoService: CarrinhoServiceProvider,private ActionSheetController: ActionSheetController,public http: HttpServiceProvider) {
     this.getAll();
   }
-
+  ionViewDidLoad() {
+ 
+  }
   getAll() {
     this.carrinhoService.load()
       .then(data => {
         this.obj = data;
         this.result = this.obj;
+        this.obj.length;
+        console.log(this.obj.length);
       });
   }
 
@@ -98,5 +102,9 @@ selectMiniatura(obj: any) {
   }).present();
   
 }
+
+
+  
+
 
 }
