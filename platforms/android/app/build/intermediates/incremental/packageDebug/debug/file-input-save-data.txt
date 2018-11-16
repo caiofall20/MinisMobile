@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Sep 22 21:26:24 GFT 2018
+#Wed Oct 03 00:56:57 GFT 2018
 76.base=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 5.base=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 42.base=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\assets\\debug
@@ -104,7 +104,7 @@ count=80
 7.set=ASSET
 45.set=ASSET
 22.file=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\assets\\fonts\\roboto-light.ttf
-32.file=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-port-hdpi-v4\\screen.png
+32.file=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\mipmap-mdpi-v4\\icon.png
 70.base=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 34.set=ANDROID_RESOURCE
 26.file=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-port-mdpi-v4\\screen.png
@@ -162,7 +162,7 @@ count=80
 57.file=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\assets\\fonts\\roboto.scss
 55.set=ASSET
 23.file=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-port-xxxhdpi-v4\\screen.png
-33.file=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\mipmap-mdpi-v4\\icon.png
+33.file=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_\\res\\drawable-port-hdpi-v4\\screen.png
 71.base=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 6.set=ASSET
 17.file=E\:\\projetos\\MinisMobile\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\build\\main.js.map

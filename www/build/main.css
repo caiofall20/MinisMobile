@@ -25678,6 +25678,10 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+p {
+  color: #55acee;
+}
+
 .action-sheets-basic-page .ion-md-share {
   color: #ED4248;
 }
