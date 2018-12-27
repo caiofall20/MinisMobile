@@ -15,6 +15,7 @@ import { CarrinhoServiceProvider } from '../providers/carrinho-service/carrinho-
 import { AdicionarPage } from '../pages/adicionar/adicionar';
 import { HttpServiceProvider } from '../providers/http-service/http-service';
 import { PesquisarPage } from '../pages/pesquisar/pesquisar';
+import { EscalaPage } from '../pages/escala/escala';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PesquisarPage } from '../pages/pesquisar/pesquisar';
     AdicionarPage,
     PesquisarPage,
     EditarPage,
+    EscalaPage,
     SearchPipe,
     SortPipe
   ],
@@ -37,7 +39,8 @@ import { PesquisarPage } from '../pages/pesquisar/pesquisar';
     HomePage,
     AdicionarPage,
     PesquisarPage,
-    EditarPage
+    EditarPage,
+    EscalaPage
   ],
   providers: [
     StatusBar,
