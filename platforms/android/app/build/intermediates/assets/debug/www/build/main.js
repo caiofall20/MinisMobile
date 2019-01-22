@@ -1,4 +1,4 @@
-webpackJsonp([3],{
+webpackJsonp([4],{
 
 /***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6,7 +6,7 @@ webpackJsonp([3],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditarPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_carrinho_service_carrinho_service__ = __webpack_require__(81);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -67,7 +67,7 @@ var EditarPage = /** @class */ (function () {
     };
     EditarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-editar',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\editar\editar.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>{{obj.modelo}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-item>\n\n        <ion-label floating>Modelo</ion-label>\n\n         <ion-input type="text" [(ngModel)]="obj.modelo"></ion-input>\n\n       </ion-item>\n\n     \n\n       <ion-item>\n\n           <ion-label floating>Marca</ion-label>\n\n            <ion-input type="text" [(ngModel)]="obj.marca"></ion-input>\n\n          </ion-item>\n\n     \n\n          <ion-item>\n\n             <ion-label floating>Coleção</ion-label>\n\n              <ion-input type="text" [(ngModel)]="obj.colecao"></ion-input>\n\n            </ion-item>\n\n     \n\n            <ion-item>\n\n               <ion-label floating>Escala</ion-label>\n\n                <ion-input type="text" [(ngModel)]="obj.escala"></ion-input>\n\n              </ion-item>\n\n     \n\n              <ion-item>\n\n                 <ion-label floating>Ano</ion-label>\n\n                  <ion-input type="text" [(ngModel)]="obj.ano"></ion-input>\n\n                </ion-item>\n\n     \n\n                <button ion-button block (click)="edit(obj)" >Editar</button>\n\n</ion-content>'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\editar\editar.html"*/,
+            selector: 'page-editar',template:/*ion-inline-start:"E:\projetos\MinisMobile\MinisMobile\src\pages\editar\editar.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>{{obj.modelo}}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-item>\n\n        <ion-label floating>Modelo</ion-label>\n\n         <ion-input type="text" [(ngModel)]="obj.modelo"></ion-input>\n\n       </ion-item>\n\n     \n\n       <ion-item>\n\n           <ion-label floating>Marca</ion-label>\n\n            <ion-input type="text" [(ngModel)]="obj.marca"></ion-input>\n\n          </ion-item>\n\n     \n\n          <ion-item>\n\n             <ion-label floating>Coleção</ion-label>\n\n              <ion-input type="text" [(ngModel)]="obj.colecao"></ion-input>\n\n            </ion-item>\n\n     \n\n            <ion-item>\n\n               <ion-label floating>Escala</ion-label>\n\n                <ion-input type="text" [(ngModel)]="obj.escala"></ion-input>\n\n              </ion-item>\n\n     \n\n              <ion-item>\n\n                 <ion-label floating>Ano</ion-label>\n\n                  <ion-input type="text" [(ngModel)]="obj.ano"></ion-input>\n\n                </ion-item>\n\n     \n\n                <button ion-button block (click)="edit(obj)" >Editar</button>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-title>© Copyright - 2019 - Caio Mateus</ion-title>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"E:\projetos\MinisMobile\MinisMobile\src\pages\editar\editar.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__["a" /* HttpServiceProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */]])
     ], EditarPage);
@@ -78,7 +78,52 @@ var EditarPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 114:
+/***/ 105:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EscalaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the EscalaPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var EscalaPage = /** @class */ (function () {
+    function EscalaPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    EscalaPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad EscalaPage');
+    };
+    EscalaPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-escala',template:/*ion-inline-start:"E:\projetos\MinisMobile\MinisMobile\src\pages\escala\escala.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Escalas</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <img src="assets/imgs/miniaturas.jpg" />\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n        Escalas das Miniaturas\n\n      </ion-card-title>\n\n      <p>\n\n        Abaixo um pouco de informação sobre os tipos de escalas existentes.\n\n      </p>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="assets/imgs/minituras.png" />\n\n    <ion-card-content>\n\n     <p>\n\n       Principais tipos de escalas.\n\n     </p>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <h3></h3><button ion-fab mini (click)="add()"><ion-icon name="add"></ion-icon></button>\n\n  <h3></h3><button ion-fab mini (click)="pesq()"><ion-icon name="search"></ion-icon></button>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <p class="copy">© Copyright - 2019 - Caio Mateus</p>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"E:\projetos\MinisMobile\MinisMobile\src\pages\escala\escala.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], EscalaPage);
+    return EscalaPage;
+}());
+
+//# sourceMappingURL=escala.js.map
+
+/***/ }),
+
+/***/ 115:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -91,24 +136,28 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 114;
+webpackEmptyAsyncContext.id = 115;
 
 /***/ }),
 
-/***/ 156:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/adicionar/adicionar.module": [
-		280,
-		2
+		281,
+		3
 	],
 	"../pages/editar/editar.module": [
-		281,
+		282,
+		2
+	],
+	"../pages/escala/escala.module": [
+		283,
 		1
 	],
 	"../pages/pesquisar/pesquisar.module": [
-		282,
+		284,
 		0
 	]
 };
@@ -123,18 +172,18 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 156;
+webpackAsyncContext.id = 157;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adicionar_adicionar__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pesquisar_pesquisar__ = __webpack_require__(54);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -162,7 +211,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\home\home.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <ion-title>Inicio</ion-title>\n\n    </ion-navbar>\n\n  </ion-header>\n\n  \n\n  <ion-content padding>\n\n   <ion-card>\n\n    <img src="assets/imgs/minituras.png"/>\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n      Coleção de Miniaturas\n\n        </ion-card-title>\n\n      <p>\n\n       Esse aplicativo foi criado com o objetivo de ajudar na hora de comprar uma nova miniatura.\n\n       Abaixo um pouco de informação sobre os tipos de escalas existentes.\n\n       \n\n      </p>\n\n    </ion-card-content>\n\n  </ion-card>\n\n    <h3>Adicionar</h3><button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n\n    <h3>Pesquisar</h3><button ion-fab mini (click)="pesq()"><ion-icon  name="search"></ion-icon></button>\n\n  </ion-content>\n\n\n\n'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"E:\projetos\MinisMobile\MinisMobile\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Inicio</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <img src="assets/imgs/Speed-Racer-Art-Logo.png" />\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n        Coleção de Miniaturas\n\n      </ion-card-title>\n\n      <p>\n\n        Esse aplicativo foi criado com o objetivo de ajudar na hora de comprar uma nova miniatura. Acima um pouco de informação\n\n        sobre os tipos de escalas existentes.\n\n      </p>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <h3></h3><button ion-fab mini (click)="add()"><ion-icon name="add"></ion-icon></button>\n\n  <h3></h3><button ion-fab mini (click)="pesq()"><ion-icon name="search"></ion-icon></button>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <p class="copy">© Copyright - 2019 - Caio Mateus</p>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"E:\projetos\MinisMobile\MinisMobile\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], HomePage);
@@ -173,13 +222,13 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(226);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -187,32 +236,34 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_editar_editar__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_http__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pipes_search_search__ = __webpack_require__(278);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pipes_sort_sort__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pipes_search_search__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pipes_sort_sort__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_carrinho_service_carrinho_service__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_adicionar_adicionar__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_http_service_http_service__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_pesquisar_pesquisar__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_escala_escala__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -239,6 +290,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_12__pages_adicionar_adicionar__["a" /* AdicionarPage */],
                 __WEBPACK_IMPORTED_MODULE_14__pages_pesquisar_pesquisar__["a" /* PesquisarPage */],
                 __WEBPACK_IMPORTED_MODULE_0__pages_editar_editar__["a" /* EditarPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_escala_escala__["a" /* EscalaPage */],
                 __WEBPACK_IMPORTED_MODULE_9__pipes_search_search__["a" /* SearchPipe */],
                 __WEBPACK_IMPORTED_MODULE_10__pipes_sort_sort__["a" /* SortPipe */]
             ],
@@ -249,6 +301,7 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/adicionar/adicionar.module#AdicionarPageModule', name: 'AdicionarPage', segment: 'adicionar', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/editar/editar.module#EditarPageModule', name: 'EditarPage', segment: 'editar', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/escala/escala.module#EscalaPageModule', name: 'EscalaPage', segment: 'escala', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/pesquisar/pesquisar.module#PesquisarPageModule', name: 'PesquisarPage', segment: 'pesquisar', priority: 'low', defaultHistory: [] }
                     ]
                 })
@@ -259,7 +312,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_adicionar_adicionar__["a" /* AdicionarPage */],
                 __WEBPACK_IMPORTED_MODULE_14__pages_pesquisar_pesquisar__["a" /* PesquisarPage */],
-                __WEBPACK_IMPORTED_MODULE_0__pages_editar_editar__["a" /* EditarPage */]
+                __WEBPACK_IMPORTED_MODULE_0__pages_editar_editar__["a" /* EditarPage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_escala_escala__["a" /* EscalaPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
@@ -277,18 +331,19 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 277:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_adicionar_adicionar__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_pesquisar_pesquisar__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_escala_escala__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -298,6 +353,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -316,7 +372,8 @@ var MyApp = /** @class */ (function () {
         this.pages = [
             { title: 'Inicio', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
             { title: 'Pesquisar', component: __WEBPACK_IMPORTED_MODULE_6__pages_pesquisar_pesquisar__["a" /* PesquisarPage */] },
-            { title: 'Adicionar', component: __WEBPACK_IMPORTED_MODULE_5__pages_adicionar_adicionar__["a" /* AdicionarPage */] }
+            { title: 'Adicionar', component: __WEBPACK_IMPORTED_MODULE_5__pages_adicionar_adicionar__["a" /* AdicionarPage */] },
+            { title: 'Escalas', component: __WEBPACK_IMPORTED_MODULE_7__pages_escala_escala__["a" /* EscalaPage */] }
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -338,7 +395,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\projetos\MinisMobile\src\app\app.html"*/'<ion-menu [content]="content">\n\n    <ion-header>\n\n      <ion-toolbar>\n\n        <ion-title>Menu</ion-title>\n\n      </ion-toolbar>\n\n    </ion-header>\n\n  \n\n    <ion-content>\n\n      <ion-list>\n\n        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n  \n\n  </ion-menu>\n\n  \n\n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"E:\projetos\MinisMobile\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\projetos\MinisMobile\MinisMobile\src\app\app.html"*/'<ion-menu [content]="content">\n\n    <ion-header>\n\n      <ion-toolbar color="primary">\n\n        <ion-title>Menu</ion-title>\n\n      </ion-toolbar>\n\n    </ion-header>\n\n\n\n    <ion-content>\n\n      <ion-list>\n\n        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n          {{p.title}}\n\n        </button>\n\n      </ion-list>\n\n    </ion-content>\n\n\n\n  </ion-menu>\n\n\n\n  <!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"E:\projetos\MinisMobile\MinisMobile\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -349,7 +406,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 278:
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -395,7 +452,7 @@ var SearchPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 279:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -450,7 +507,7 @@ var SortPipe = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdicionarPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__ = __webpack_require__(49);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -501,7 +558,7 @@ var AdicionarPage = /** @class */ (function () {
     };
     AdicionarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-adicionar',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\adicionar\adicionar.html"*/'<!--\n\n  Generated template for the SavePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Cadastro de Carrinhos</ion-title>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n      <ion-item>\n\n        <ion-label fixed>Modelo</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.modelo"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Marca</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.marca"></ion-input>\n\n      </ion-item>\n\n\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Coleção</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.colecao"></ion-input>\n\n      </ion-item>\n\n\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Escala</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.escala"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Ano</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.ano"></ion-input>\n\n      </ion-item>\n\n\n\n      <button ion-button full (click)="saveCarrinho(carrinho)" (click)="presentToast(\'bottom\')">Adicionar Carrinho</button>\n\n\n\n  </ion-list>\n\n\n\n</ion-content>'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\adicionar\adicionar.html"*/,
+            selector: 'page-adicionar',template:/*ion-inline-start:"E:\projetos\MinisMobile\MinisMobile\src\pages\adicionar\adicionar.html"*/'<!--\n\n  Generated template for the SavePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Cadastro de Carrinhos</ion-title>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n      <ion-item>\n\n        <ion-label fixed>Modelo</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.modelo"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Marca</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.marca"></ion-input>\n\n      </ion-item>\n\n\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Coleção</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.colecao"></ion-input>\n\n      </ion-item>\n\n\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Escala</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.escala"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Ano</ion-label>\n\n        <ion-input type="text" [(ngModel)]="carrinho.ano"></ion-input>\n\n      </ion-item>\n\n\n\n      <button color="primary" ion-button full (click)="saveCarrinho(carrinho)" (click)="presentToast(\'bottom\')">Adicionar Carrinho</button>\n\n\n\n  </ion-list>\n\n\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <p class="copy">© Copyright - 2019 - Caio Mateus</p>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"E:\projetos\MinisMobile\MinisMobile\src\pages\adicionar\adicionar.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_http_service_http_service__["a" /* HttpServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
     ], AdicionarPage);
@@ -519,9 +576,9 @@ var AdicionarPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpServiceProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -580,7 +637,7 @@ var HttpServiceProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PesquisarPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_carrinho_service_carrinho_service__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__adicionar_adicionar__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_http_service_http_service__ = __webpack_require__(49);
@@ -683,7 +740,7 @@ var PesquisarPage = /** @class */ (function () {
     };
     PesquisarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-pesquisar',template:/*ion-inline-start:"E:\projetos\MinisMobile\src\pages\pesquisar\pesquisar.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n   Coleção\n\n    </ion-title>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="action-sheets-basic-page" >\n\n    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>\n\n    <ion-list text-wrap>\n\n        <ion-item   *ngFor="let obj of result | search : terms | sort: {property: column, order: order}" (click)="selectMiniatura(obj)">\n\n         <h2>{{obj.modelo}} - {{obj.marca}} - {{obj.colecao}} - {{obj.ano}} - {{obj.escala}}  </h2>\n\n       </ion-item> \n\n     </ion-list>\n\n     <button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n\n     <ion-item>\n\n      <ion-icon name="car" item-start></ion-icon>\n\n      Miniaturas\n\n      <ion-badge item-end>{{obj.length}}</ion-badge>\n\n    </ion-item>\n\n</ion-content>'/*ion-inline-end:"E:\projetos\MinisMobile\src\pages\pesquisar\pesquisar.html"*/,
+            selector: 'page-pesquisar',template:/*ion-inline-start:"E:\projetos\MinisMobile\MinisMobile\src\pages\pesquisar\pesquisar.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>\n\n   Coleção\n\n    </ion-title>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="action-sheets-basic-page" >\n\n    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>\n\n    <ion-list text-wrap>\n\n        <ion-item   *ngFor="let obj of result | search : terms | sort: {property: column, order: order}" (click)="selectMiniatura(obj)">\n\n         <h2>{{obj.modelo}} - {{obj.marca}} - {{obj.colecao}} - {{obj.ano}} - {{obj.escala}}  </h2>\n\n       </ion-item> \n\n     </ion-list>\n\n     <button ion-fab mini (click)="add()"><ion-icon  name="add"></ion-icon></button>\n\n     <ion-item>\n\n      <ion-icon name="car" item-start></ion-icon>\n\n      Miniaturas\n\n      <ion-badge item-end>{{obj.length}}</ion-badge>\n\n    </ion-item>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <p class="copy">© Copyright - 2019 - Caio Mateus</p>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"E:\projetos\MinisMobile\MinisMobile\src\pages\pesquisar\pesquisar.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_carrinho_service_carrinho_service__["a" /* CarrinhoServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_4__providers_http_service_http_service__["a" /* HttpServiceProvider */]])
     ], PesquisarPage);
@@ -701,7 +758,7 @@ var PesquisarPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarrinhoServiceProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -765,5 +822,5 @@ var CarrinhoServiceProvider = /** @class */ (function () {
 
 /***/ })
 
-},[202]);
+},[203]);
 //# sourceMappingURL=main.js.map

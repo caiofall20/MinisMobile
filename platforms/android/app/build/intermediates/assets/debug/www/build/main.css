@@ -25678,6 +25678,69 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+.copy {
+  padding: 0 12px;
+  font-size: 13px !important;
+  font-weight: 500;
+  color: #424242;
+  text-align: center;
+}
+
+.toolbar-title-md {
+  padding: 0;
+  margin-right: 63px;
+  font-size: 27px !important;
+  font-weight: 500;
+  color: #424242;
+  text-align: center;
+}
+
+.toolbar-title-md {
+  padding: 0 12px;
+  font-size: 13px !important;
+  font-weight: 500;
+  color: #424242;
+  text-align: center;
+}
+
+.copy {
+  padding: 0 12px;
+  font-size: 13px !important;
+  font-weight: 500;
+  color: #424242;
+  text-align: center;
+}
+
+.toolbar-title-md {
+  padding: 0;
+  margin-right: 63px;
+  font-size: 27px !important;
+  font-weight: 500;
+  color: #424242;
+  text-align: center;
+}
+
+p {
+  color: #55acee;
+}
+
+.copy {
+  padding: 0 12px;
+  font-size: 13px !important;
+  font-weight: 500;
+  color: #424242;
+  text-align: center;
+}
+
+.toolbar-title-md {
+  padding: 0;
+  margin-right: 63px;
+  font-size: 27px !important;
+  font-weight: 500;
+  color: #424242;
+  text-align: center;
+}
+
 .action-sheets-basic-page .ion-md-share {
   color: #ED4248;
 }
@@ -25693,4 +25756,21 @@ ion-navbar.toolbar {
 .action-sheets-basic-page .action-sheet-cancel ion-icon,
 .action-sheets-basic-page .action-sheet-destructive ion-icon {
   color: #757575;
+}
+
+.copy {
+  padding: 0 12px;
+  font-size: 13px !important;
+  font-weight: 500;
+  color: #424242;
+  text-align: center;
+}
+
+.toolbar-title-md {
+  padding: 0;
+  margin-right: 63px;
+  font-size: 27px !important;
+  font-weight: 500;
+  color: #424242;
+  text-align: center;
 }

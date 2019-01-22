@@ -1,0 +1,2 @@
+ionic serve --lab - ligar o servidor localmente simulando dispositivos.
+ionic cordova build android - o build será gerado em E:\projetos\MinisMobile\MinisMobile\platforms\android\app\build\outputs\apk\debug
